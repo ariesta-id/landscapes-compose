@@ -6,7 +6,7 @@ services:
       - 8.8.8.8
       - 8.8.4.4
     ports:
-      - "80:80"
+      - "8080:80"
       - "443:443"
     volumes:
       - caddy:/data
