@@ -40,8 +40,8 @@ services:
   migration:
     image: "wearepal/landscapes:${VERSION}"
     command: bin/run-migrations
-    secrets:
-      - secret_key_base
+    environment:
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
   web:
     image: "wearepal/landscapes:${VERSION}"
@@ -50,8 +50,8 @@ services:
       driver: "json-file"
       options:
         max-size: "1G"
-    secrets:
-      - secret_key_base
+    environment:
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     volumes:
       - storage:/app/storage
 
@@ -63,8 +63,8 @@ services:
       driver: "json-file"
       options:
         max-size: "1G"
-    secrets:
-      - secret_key_base
+    environment:
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     volumes:
       - storage:/app/storage
 
